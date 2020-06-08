@@ -1,6 +1,6 @@
 name: atompaynetz
 description: An atom paynetz helper dart class to generate payment url.
-version: 0.0.1
+version: 0.0.2
 author: Atom Technologies
 homepage: https://atomtech.in
 
