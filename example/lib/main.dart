@@ -53,14 +53,42 @@ class OpenPayment extends State<MainApp> {
   void initState() {
     super.initState();
     flutterWebViewPlugin.onUrlChanged.listen((String url) {
+     
+  
+             print(url);
       
-      if (url.contains('/ResponseParam.jsp')) {
-        String token = url;
-          
+      if (url.contains('/response.php')) {
+        
+         var substringfromurl = url.substring(0,url.indexOf('?'));
+         var urlarray = substringfromurl.split('&').map((String text) => Text(text)).toList();
+         print(urlarray);
+            //  var atompay = new AtomPaynetz( 
+            //     login:'197',
+            //     pass:'Test@123',
+            //     prodid:'NSE',
+            //     amt:'100.00',
+            //     date:'02/06/2020 16:50:00',
+            //     txnid:'123',
+            //     custacc:'0',
+            //     requesthashKey:'KEY123657234',
+            //     responsehashKey:'KEYRESP123657234',
+            //     mode:'uat'
+            //   );
+              // var validate =  atompay.validateSignature(
+              //                     mmp_txn,
+              //                     mer_txn,
+              //                     f_code,
+              //                     prod,
+              //                     discriminator,
+              //                     amt,
+              //                     bank_txn,
+              //                     signature
+              //                   );
         flutterWebViewPlugin.close();
-        Navigator.of(context).pop(token);
+       
       }
     });
+
   }
 
   getUrl (){

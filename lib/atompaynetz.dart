@@ -38,9 +38,9 @@ class AtomPaynetz {
     var clientcodeEncoded  = base64.encode(bytes);
     var url = "";
     if(this.mode == "live"){
-       url =  "https://payments.atomtech.in/paynetz/epi/fts?login="+this.login+"&pass="+this.pass+"&ttype="+this.ttype+"&prodid="+this.prodid+"&amt="+this.amt+"&txncurr="+this.txncurr+"&txnscamt="+this.txnscamt+"&clientcode="+clientcodeEncoded+"=&txnid="+this.txnid+"&date="+this.date+"&custacc="+this.custacc+"&ru=https://paynetzuat.atomtech.in/paynetzclient/ResponseParam.jsp&signature="+signature;
+       url =  "https://payments.atomtech.in/paynetz/epi/fts?login="+this.login+"&pass="+this.pass+"&ttype="+this.ttype+"&prodid="+this.prodid+"&amt="+this.amt+"&txncurr="+this.txncurr+"&txnscamt="+this.txnscamt+"&clientcode="+clientcodeEncoded+"=&txnid="+this.txnid+"&date="+this.date+"&custacc="+this.custacc+"&ru=https://atomtech.in/atomfluttersdk/index.php&signature="+signature;
     }else{
-        url =  "https://paynetzuat.atomtech.in/paynetz/epi/fts?login="+this.login+"&pass="+this.pass+"&ttype="+this.ttype+"&prodid="+this.prodid+"&amt="+this.amt+"&txncurr="+this.txncurr+"&txnscamt="+this.txnscamt+"&clientcode="+clientcodeEncoded+"=&txnid="+this.txnid+"&date="+this.date+"&custacc="+this.custacc+"&ru=https://paynetzuat.atomtech.in/paynetzclient/ResponseParam.jsp&signature="+signature;
+        url =  "https://paynetzuat.atomtech.in/paynetz/epi/fts?login="+this.login+"&pass="+this.pass+"&ttype="+this.ttype+"&prodid="+this.prodid+"&amt="+this.amt+"&txncurr="+this.txncurr+"&txnscamt="+this.txnscamt+"&clientcode="+clientcodeEncoded+"=&txnid="+this.txnid+"&date="+this.date+"&custacc="+this.custacc+"&ru=https://atomtech.in/atomfluttersdk/index.php&signature="+signature;
       
     }
     return(url);
