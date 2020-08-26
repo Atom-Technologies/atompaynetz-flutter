@@ -9,7 +9,7 @@ Download the package from pub.dev,
 Add this to `dependencies` in your app's `pubspec.yml`
 
 ```yaml
-atompaynetz: ^0.0.3
+atompaynetz: ^0.0.4
 ```
 ## Usage
 
@@ -26,22 +26,29 @@ import 'package:atompaynetz/atompaynetz.dart';
 Create the instance and pass the mandatory parameters.
 
 ```dart
-getUrl (){
-    var atompay = new AtomPaynetz( 
-                login:'197',
-                pass:'Test@123',
-                prodid:'NSE',
-                amt:'100.00',
-                date:'02/06/2020 16:50:00',
-                txnid:'123',
-                custacc:'0',
-                requesthashKey:'KEY123657234',
-                responsehashKey:'KEYRESP123657234',
-                mode:'uat'
-              );
-            
-      var urlToSend =  atompay.getUrl();
-      return urlToSend;
+ getUrl() {
+    var atompay = new AtomPaynetz(
+        login: '192',
+        pass: 'Test@123',
+        prodid: 'NSE',
+        amt: '100.00',
+        date: '02/06/2020 16:50:00',
+        txnid: '123',
+        custacc: '0',
+        udf1: 'Test Name',
+        udf2: 'test@test.com',
+        udf3: '9999999999',
+        udf4: 'Mumbai',
+        requesthashKey: 'KEY123657234',
+        requestencryptionKey: '8E41C78439831010F81F61C344B7BFC7',
+        requestsaltKey: '8E41C78439831010F81F61C344B7BFC7',
+        responsehashKey: 'KEYRESP123657234',
+        responseencypritonKey: '8E41C78439831010F81F61C344B7BFC7',
+        responsesaltKey: '8E41C78439831010F81F61C344B7BFC7',
+        mode: 'uat'); // put mode: 'live' in production
+
+    var urlToSend = atompay.getUrl();
+    return urlToSend;
   }
 ```
 
@@ -68,18 +75,26 @@ Getting Response From Webview
          var substringfromurl = url.substring(0,url.indexOf('?'));
          var urlarray = substringfromurl.split('&').map((String text) => Text(text)).toList();
          print(urlarray);
-            //  var atompay = new AtomPaynetz( 
-            //     login:'197',
-            //     pass:'Test@123',
-            //     prodid:'NSE',
-            //     amt:'100.00',
-            //     date:'02/06/2020 16:50:00',
-            //     txnid:'123',
-            //     custacc:'0',
-            //     requesthashKey:'KEY123657234',
-            //     responsehashKey:'KEYRESP123657234',
-            //     mode:'uat'
-            //   );
+         
+            // var atompay = new AtomPaynetz(
+            //     login: '192',
+            //     pass: 'Test@123',
+            //     prodid: 'NSE',
+            //     amt: '100.00',
+            //     date: '02/06/2020 16:50:00',
+            //     txnid: '123',
+            //     custacc: '0',
+            //     udf1: 'Test Name',
+            //     udf2: 'test@test.com',
+            //     udf3: '9999999999',
+            //     udf4: 'Mumbai',
+            //     requesthashKey: 'KEY123657234',
+            //     requestencryptionKey: '8E41C78439831010F81F61C344B7BFC7',
+            //     requestsaltKey: '8E41C78439831010F81F61C344B7BFC7',
+            //     responsehashKey: 'KEYRESP123657234',
+            //     responseencypritonKey: '8E41C78439831010F81F61C344B7BFC7',
+            //     responsesaltKey: '8E41C78439831010F81F61C344B7BFC7',
+            //     mode: 'uat');
               // var validate =  atompay.validateSignature(
               //                     mmp_txn,
               //                     mer_txn,
