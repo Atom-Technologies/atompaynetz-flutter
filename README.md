@@ -9,7 +9,7 @@ Download the package from pub.dev,
 Add this to `dependencies` in your app's `pubspec.yml`
 
 ```yaml
-atompaynetz: ^0.0.4
+atompaynetz: ^0.0.5
 ```
 ## Usage
 
